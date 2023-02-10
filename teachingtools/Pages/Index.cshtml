@@ -1,0 +1,79 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}   
+<link rel="stylesheet" href="~/css/index.css" asp-append-version="true"/>
+
+<div class="row">
+    <div class="col-sm align-middle my-auto">
+        <div class="text-center align-middle">
+            <h1 class="display-8">Welcome to<br><b>Teaching Tools</b></h1>
+        </div>
+    </div>
+    <div class="col-sm my-auto">
+        <div class="container-details">
+            <div class="container-buttons">
+                <div class="row">
+                    <div id="container-login" onclick="hideRegister()" onmouseover="loginHover()" onmouseout="loginOut()" class="col d-inline text-center align-middle container-login">
+                        <a id="login-text" >Log In</a>
+                    </div>
+                    <div id="container-register" onmouseover="registerHover()" onmouseout="registerOut()" onclick="hideLogin()" class="col d-inline text-center align-middle container-register">
+                        <a id="register-text">Register</a>
+                    </div>
+                </div>
+            </div>
+            <form asp-page-handler="Login" method="post">
+                <div id="container-input-login" class="container-input-login">
+                    <div asp-validation-summary="All"></div>
+                    <div class="row">
+                        <div class="container-email">
+                            <input type="text" class="input-email" placeholder="eMail" asp-for="Input.Email"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container-password">
+                            <input type="password" class="input-password" placeholder="Password" asp-for="Input.Password"/>
+                            <div class="forgot-password">
+                                <a>Forgotten password?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div onclick="login()" class="button">
+                            Login
+                            <button id="login" name="login" type="submit"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <form asp-page-handler="Register" method="post">
+                <div id="container-input-register" class="container-input-register">
+                    <div asp-validation-summary="All"></div>
+                    <div class="row">
+                        <div class="container-email">
+                            <input type="text" class="input-email" placeholder="eMail" asp-for="RegisterInput.Email"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container-password">
+                            <input type="password" class="input-password" placeholder="Password" asp-for="RegisterInput.Password"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container-confirmpassword">
+                            <input type="password" class="input-confirmpassword" placeholder="Confirm Password" asp-for="RegisterInput.ConfirmPassword"/>
+                        </div>
+                    </div>
+                    <div class="row">      
+                        <div onclick="register()" class="button">
+                            Register
+                            <button name="register" id="register" type="submit"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

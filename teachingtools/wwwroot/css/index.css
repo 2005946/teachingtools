@@ -1,0 +1,114 @@
+﻿.container-details {
+    width: 450px;
+    height: 600px;
+    border: solid white 5px;
+    border-radius: 25px;
+    margin-top: 25px;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .container-details {
+        width: 365px;
+        height: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.container-buttons {
+    font-size: 32px;
+    transform: translate(0px,-1px);
+}
+
+.container-login {
+    background-color: transparent;
+    width: 50%;
+    border-top-left-radius:12px;
+    margin-left: 10px;
+    transition: ease-in-out 0.3s;
+}
+
+.container-login a {
+    color: white !important;
+    transition: ease-in-out 0.3s;
+}
+
+.container-login:hover{
+    cursor: pointer;
+}
+
+.container-register {
+    width: 50%;
+    color: black;
+    transition: ease-in-out 0.3s;
+    border-top-right-radius: 12px;
+    margin-right: 10px;
+    background-color: white;
+}
+
+.container-register a {
+    color: black !important;
+    transition: ease-in-out 0.3s;
+    height: 100%;
+    width: 100%;
+}
+
+.container-register:hover{
+    cursor: pointer;
+}
+
+.container-input-login, .container-input-register{
+    margin-left: 40px;
+}
+
+.container-input-register{
+    display: none;
+}
+
+.container-input-login{
+    display: block;
+}
+
+.container-input-login input, .container-input-register input{
+    height: 48px;
+    border-radius: 12px;
+    width: 90%;
+    font-size: 18px;
+    margin-top: 30px;
+    padding-left: 25px;
+    color: black !important;
+}
+
+.forgot-password{
+    font-size: 14px;
+}
+.forgot-password:hover {
+    cursor: pointer;
+}
+
+.button {
+    margin-top: 25px;
+    margin-left: 12px;
+    background-color: transparent;
+    border: none;
+    border: 4px white solid;
+    border-radius: 12px;
+    font-size: 24px;
+    color: white;
+    padding: 0;
+    width: 35%;
+    height: 75%;
+    transition: ease-in-out 0.3s;
+    text-align: center;
+}
+
+.button button{
+    display: none;
+}
+
+.button:hover {
+    background-color: white;
+    color: black !important;
+    transition: ease-in-out 0.3s;
+}
