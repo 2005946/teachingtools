@@ -1,0 +1,106 @@
+﻿@page
+@model teachingtools.Pages.SubscriptionsModel
+@{
+}
+@using Microsoft.AspNetCore.Identity
+@using teachingtools.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<link rel="stylesheet" href="~/css/subscriptions.css" asp-append-version="true" />
+
+<div class="row">
+    <div class="col-sm my-auto">
+        <div class="container-subscription free-container">
+            <div class="container-buttons">
+                <div class="row">
+                    <div class="col d-inline text-center align-middle container-header">
+                        <a>Free Version</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="bullet-points">
+                        <ul>
+                            <li>
+                                Limited access to some topics
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="free text-center align-bottom">
+                        <b>Free</b>
+                    </div>
+                </div>
+            </div>          
+        </div>
+    </div>
+    <div class="col-sm my-auto">
+        <div class="container-subscription">
+            <div class="container-buttons">
+                <div class="row">
+                    <div class="col d-inline text-center align-middle container-header">
+                        <a>Premium</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="bullet-points">
+                        <ul>
+                            <li>
+                                Access to all teaching topics
+                            </li>
+                            <li>
+                                Ability to save your work
+                            </li>
+                            <li>
+                                Access to more resources
+                            </li>
+                            <li>
+                                Ability to share your work
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="pricing">
+                        <div class="price">
+                            <b>£0.99</b>
+                            <br />
+                            <div class="text-white per-text">
+                                per month
+                            </div>
+                        </div>
+                        <div class="price">
+                            <b>£9.99</b>
+                            <br />
+                            <div class="text-white per-text">
+                                per year
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="disclaimer text-white text-center">
+                        You can <b>cancel</b> your subscription <br /><b>anytime</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="subscribe align-content-center">
+                        @if (User.Identity.IsAuthenticated == true)
+                        {
+                            <button>Buy Now</button>
+                        }else{
+                            <a asp-page="/Index"><button onclick="logInAlert()" type="button">Buy Now</button></a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function logInAlert(){
+        alert("Must be logged in in order to \n"+ "buy a subscription. Please log in on the home page.");
+    }
+</script>

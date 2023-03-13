@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using teachingtools.Data;
+using System.Runtime.CompilerServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,13 +45,13 @@ app.UseAuthentication();
 app.MapRazorPages();
 app.Run();
 
-using (var scope = app.Services.CreateScope())
+async Task CreateRoles(IServiceProvider serviceProvider)
 {
     //Resolve ASP .NET Core Identity with DI help
-    var UserManager = (UserManager<ApplicationUser>)scope.ServiceProvider.GetService(typeof(UserManager<ApplicationUser>));
-    var RoleManager = (RoleManager<IdentityRole>)scope.ServiceProvider.GetService(typeof(RoleManager<IdentityRole>));
+    var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
     // do you things here
-    string[] roleNames = { "Admin", "Member" };
+    string[] roleNames = { "Admin", "Subscriber", "Member"};
     foreach (var roleName in roleNames)
     {
         bool roleExists = await RoleManager.RoleExistsAsync(roleName);

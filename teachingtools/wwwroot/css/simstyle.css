@@ -1,0 +1,108 @@
+html {
+    overflow-x: hidden;
+}
+
+body{
+    height: 120vh;
+}
+
+.tools{
+    display: flex;
+    align-items: center;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.tools-navbar{
+    padding-top: 195px;
+}
+
+.tools-navbar nav{
+    background: none;
+    margin-left: 200px;
+}
+
+.navGroupTools {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.nav-item {
+    display: inline-flex;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.choices {
+    background-color: white;
+    border-radius: 12px;
+    padding: 6px 6px 6px 6px;
+    max-width: 180px;
+    min-width: 180px;
+    display: inline-block;
+}
+
+.logicinputs button {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    width: 80px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    transition: ease-in-out 0.3s;
+}
+
+.logicinputs img{
+    height: 40px;
+    width: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.logicinputs button:hover {
+    background-color: rgba(0,0,0,0.10);
+    transition: ease-in-out 0.3s;
+}
+
+.logicinputs button:active {
+    background-color: rgba(0,0,0,0.2);
+    transition: ease-in-out 0.0s;
+}
+
+.logicgates button {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    margin-bottom: 5px;
+}
+
+.logicgates img {
+    width: 70px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.logicgates button:hover {
+    background-color: rgba(0,0,0,0.10);
+    transition: ease-in-out 0.3s;
+}
+
+.logicgates button:active {
+    background-color: rgba(0,0,0,0.2);
+    transition: ease-in-out 0.0s;
+}
+
+.canvas-container{
+    display: inline-block;
+}
+
+canvas {
+    border-radius: 25px;
+    max-height: 100%;
+    max-width: 100%;
+    min-width: 400px;
+}

@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\Shared\Logic.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Castle.Core" Version="5.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
@@ -20,7 +24,38 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
+    <None Include="wwwroot\css\simstyle.css" />
+    <None Include="wwwroot\simulator\img\AND.svg" />
+    <None Include="wwwroot\simulator\img\hand.png" />
+    <None Include="wwwroot\simulator\img\LogicInput.png" />
+    <None Include="wwwroot\simulator\img\LogicInput.svg" />
+    <None Include="wwwroot\simulator\img\LogicOutput.png" />
+    <None Include="wwwroot\simulator\img\LogicOutput.svg" />
+    <None Include="wwwroot\simulator\img\NAND.svg" />
+    <None Include="wwwroot\simulator\img\NOR.svg" />
+    <None Include="wwwroot\simulator\img\NOT.svg" />
+    <None Include="wwwroot\simulator\img\openhand.svg" />
+    <None Include="wwwroot\simulator\img\OR.svg" />
+    <None Include="wwwroot\simulator\img\pencil.svg" />
+    <None Include="wwwroot\simulator\img\trashcan.svg" />
+    <None Include="wwwroot\simulator\img\XNOR.svg" />
+    <None Include="wwwroot\simulator\img\XOR.svg" />
+    <None Include="wwwroot\simulator\js\circuit_components\Enums.js" />
+    <None Include="wwwroot\simulator\js\circuit_components\Gate.js" />
+    <None Include="wwwroot\simulator\js\circuit_components\Integrated.js" />
+    <None Include="wwwroot\simulator\js\circuit_components\LogicInput.js" />
+    <None Include="wwwroot\simulator\js\circuit_components\LogicOutput.js" />
+    <None Include="wwwroot\simulator\js\circuit_components\Node.js" />
+    <None Include="wwwroot\simulator\js\circuit_components\Wire.js" />
+    <None Include="wwwroot\simulator\js\FileManager.js" />
+    <None Include="wwwroot\simulator\js\menutools.js" />
+    <None Include="wwwroot\simulator\js\simulator.js" />
+    <None Include="wwwroot\vendor\js\p5.min.js" />
+    <None Include="wwwroot\vendor\js\popper.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\simulator\css\" />
   </ItemGroup>
 
 </Project>
