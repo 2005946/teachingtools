@@ -1,0 +1,59 @@
+﻿.container-faq {
+    width: 900px;
+    height: 600px;
+    border: solid white 5px;
+    border-radius: 25px;
+    margin-top: 25px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 700px) {
+    .container-faq {
+        width: 365px !important;
+        height: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bullet-points{
+        font-size: 20px !important;
+        margin-left: -75px;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .container-faq {
+        width: 600px;
+        height: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.bullet-points {
+    font-size: 24px;
+}
+
+.bullet-points ul li {
+    margin-left: 100px;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
+.container-buttons {
+    font-size: 32px;
+}
+
+.container-header {
+    background-color: white;
+    width: 100%;
+    border-top-left-radius:12px;
+    margin-left: 10px;
+    transition: ease-in-out 0.3s;
+}
+
+.container-header a {
+    color: black !important;
+    transition: ease-in-out 0.3s;
+}

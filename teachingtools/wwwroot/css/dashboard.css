@@ -1,0 +1,83 @@
+﻿.container-dashboard {
+    width: 900px;
+    height: 600px;
+    border: solid white 5px;
+    border-radius: 25px;
+    margin-top: 25px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 700px) {
+    .container-dashboard {
+        width: 365px !important;
+        height: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .container-dashboard {
+        width: 600px;
+        height: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.container-buttons {
+    font-size: 32px;
+}
+
+.container-header {
+    background-color: white;
+    width: 100%;
+    border-top-left-radius:12px;
+    margin-left: 10px;
+    transition: ease-in-out 0.3s;
+}
+
+.container-header a {
+    color: black !important;
+    transition: ease-in-out 0.3s;
+}
+
+.option{
+    margin-left: 64px;
+    margin-top: 50px;
+    max-width: 150px;
+    max-height: 250px;
+    height: 150px;
+    border: white 5px solid;
+    border-radius: 25px;
+    transition: ease-in-out 0.3s;
+}
+
+.option img {
+    width: 90%;
+    margin-left: 5px;
+    margin-top: 42px;
+    filter: invert(100%);
+}
+
+.option:hover{
+    background-color: white;
+    transition: ease-in-out 0.3s;
+}
+
+.option:hover img {
+    filter: invert(0%);
+    transition: ease-in-out 0.3s;
+}
+
+.option:active{
+    background-color: rgba(200,200,200,1);
+}
+
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+}
