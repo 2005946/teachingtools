@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Org.BouncyCastle.Bcpg;
 using teachingtools.Data;
 
-namespace teachingtools.Pages.Account
+namespace teachingtools.Pages
 {
     public class RegisterModel : PageModel
     {

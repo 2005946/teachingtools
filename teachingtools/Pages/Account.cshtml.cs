@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using teachingtools.Data;
 
-namespace teachingtools.Pages.Account
+namespace teachingtools.Pages
 {
     [Authorize]
     public class AccountModel : PageModel
