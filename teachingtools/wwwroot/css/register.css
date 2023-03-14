@@ -20,6 +20,27 @@
     transform: translate(0px,-1px);
 }
 
+.container-login {
+    background-color: none;
+    width: 50%;
+    border-top-left-radius: 12px;
+    margin-left: 10px;
+    transition: ease-in-out 0.3s;
+}
+
+.container-login a {
+    color: white;
+    transition: ease-in-out 0.3s;
+}
+
+.container-login:hover{
+    background-color: white;
+}
+
+.container-login:hover a{
+    color: black !important;
+}
+
 .container-register {
     width: 50%;
     color: black;
@@ -32,11 +53,17 @@
 .container-register a {
     color: black !important;
     transition: ease-in-out 0.3s;
-    height: 100%;
-    width: 100%;
+}
+
+a {
+    text-decoration: none;
 }
 
 .container-register:hover{
+    cursor: default;
+}
+
+.container-login:hover {
     cursor: pointer;
 }
 

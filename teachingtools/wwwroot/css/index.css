@@ -21,7 +21,7 @@
 }
 
 .container-login {
-    background-color: transparent;
+    background-color: white;
     width: 50%;
     border-top-left-radius:12px;
     margin-left: 10px;
@@ -29,35 +29,43 @@
 }
 
 .container-login a {
-    color: white !important;
+    color: black !important;
     transition: ease-in-out 0.3s;
 }
 
 .container-login:hover{
-    cursor: pointer;
+    cursor: default;
 }
 
 .container-register {
     width: 50%;
-    color: black;
+    color: white;
     transition: ease-in-out 0.3s;
     border-top-right-radius: 12px;
     margin-right: 10px;
-    background-color: white;
+    background-color: none;
 }
 
-.container-register a {
-    color: black !important;
-    transition: ease-in-out 0.3s;
+.text{
     height: 100%;
     width: 100%;
 }
 
-.container-register:hover{
-    cursor: pointer;
+.container-register .text {
+    color: white !important;
+    transition: ease-in-out 0.3s;
 }
 
-.container-input-login, .container-input-register{
+.container-register:hover .text {
+    color: black !important;
+}
+
+.container-register:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+.container-input-login{
     margin-left: 40px;
 }
 
@@ -69,7 +77,7 @@
     display: block;
 }
 
-.container-input-login input, .container-input-register input{
+.container-input-login input{
     height: 48px;
     border-radius: 12px;
     width: 90%;
@@ -77,6 +85,10 @@
     margin-top: 30px;
     padding-left: 25px;
     color: black !important;
+}
+
+a{
+    text-decoration: none;
 }
 
 .forgot-password{

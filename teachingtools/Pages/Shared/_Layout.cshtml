@@ -13,7 +13,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">
-                    <img src="images/logo.png"/>
+                    <img title="Home Page" src="images/logo.png"/>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
                         @if (User.Identity.IsAuthenticated == true)
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-page="/Dashboard">Dashboard</a>
+                                <a title="Dashboard Page" class="nav-link" asp-area="" asp-page="/Dashboard">Dashboard</a>
                             </li>
                         }
                         else
@@ -32,12 +32,12 @@
                             
                         }
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Subscriptions">Subscriptions</a>
+                            <a title="Subscriptions Page" class="nav-link" asp-area="" asp-page="/Subscriptions">Subscriptions</a>
                         </li>
                         @if (User.Identity.IsAuthenticated == true)
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-page="/Account">Account</a>
+                                <a title="Account Page" class="nav-link" asp-area="" asp-page="/Account">Account</a>
                             </li>
                         }
                         else
@@ -45,7 +45,7 @@
                             
                         }
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/FAQ">FAQs</a>
+                            <a title="Frequently Asked Questions Page" class="nav-link" asp-area="" asp-page="/FAQ">FAQs</a>
                         </li>
                     </ul>
                 </div>

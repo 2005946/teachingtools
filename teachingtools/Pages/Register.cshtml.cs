@@ -8,7 +8,6 @@ namespace teachingtools.Pages
 {
     public class RegisterModel : PageModel
     {
-
         [BindProperty]
         public Registration Input { get; set; }
 
@@ -16,9 +15,7 @@ namespace teachingtools.Pages
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userInManager;
 
-        public RegisterModel(UserManager<ApplicationUser> um,
-            SignInManager<ApplicationUser> sm,
-            AppDbContext db)
+        public RegisterModel(UserManager<ApplicationUser> um, SignInManager<ApplicationUser> sm, AppDbContext db)
         {
             _signInManager = sm;
             _userInManager = um;
