@@ -20,8 +20,30 @@ body{
 .tools-navbar nav{
     background: none;
     margin-left: 200px;
+    border-radius: 5px;
+    margin-right: 12px;
 }
 
+button:focus{
+    background-color: none !important;
+    color: black !important;
+}
+
+button:active{
+    color: black !important;
+}
+
+label:focus {
+    background-color: black !important;
+}
+
+label:hover {
+    color: black !important;
+}
+
+button:hover {
+    color: black !important;
+}
 .navGroupTools {
     padding-left: 12px;
     padding-right: 12px;
@@ -102,7 +124,7 @@ input[type="file"] {
 
 canvas {
     border-radius: 25px;
-    max-height: 100%;
+    max-height: 1440px;
     max-width: 100%;
     min-width: 400px;
 }

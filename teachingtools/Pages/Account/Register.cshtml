@@ -1,10 +1,9 @@
 ﻿@page
-@model teachingtools.Pages.IndexModel
+@model teachingtools.Pages.Account.RegisterModel
 @{
-    ViewData["Title"] = "Home";
 }
 
-<link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
 
 <div class="row">
     <div class="col-sm align-middle my-auto">
@@ -17,15 +16,15 @@
             <div class="container-buttons">
                 <div class="row">
                     <div class="col d-inline text-center align-middle container-login">
-                        <a id="login-text">Log In</a>
+                        <a id="login-text" asp-page="/Index">Log In</a>
                     </div>
                     <div class="col d-inline text-center align-middle container-register">
-                        <a id="register-text" asp-page="/Account/Register">Register</a>
+                        <a id="register-text">Register</a>
                     </div>
                 </div>
             </div>
-            <form asp-page-handler="Login" method="post">
-                <div id="container-input-login" class="container-input-login">
+            <form asp-page-handler="Register" method="post">
+                <div id="container-input-register" class="container-input-register">
                     <div asp-validation-summary="All"></div>
                     <div class="row">
                         <div class="container-email">
@@ -35,15 +34,17 @@
                     <div class="row">
                         <div class="container-password">
                             <input type="password" class="input-password" placeholder="Password" asp-for="Input.Password" />
-                            <div class="forgot-password">
-                                <a>Forgotten password?</a>
-                            </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div onclick="login()" class="button">
-                            Login
-                            <button id="login" name="login" type="submit"></button>
+                        <div class="container-confirmpassword">
+                            <input type="password" class="input-confirmpassword" placeholder="Confirm Password" asp-for="Input.ConfirmPassword" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div onclick="register()" class="button">
+                            Register
+                            <button name="register" id="register" type="submit"></button>
                         </div>
                     </div>
                 </div>
@@ -52,4 +53,4 @@
     </div>
 </div>
 
-<script src="~/js/login.js" asp-append-version="true"></script>
+<script src="~/js/register.js" asp-append-version="true"></script>

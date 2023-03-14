@@ -16,20 +16,23 @@
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
 					<div class="navGroupTools">
-						<button type="button" class="btn btn-outline-light" tool="Move" onclick="activeTool(this)">
+						<button type="button" class="btn btn-outline-light Edit fw-bold" tool="Edit" onclick="activeTool(this)">
+							Edit
+						</button>
+						<button type="button" class="btn btn-outline-light fw-bold" tool="Move" onclick="activeTool(this)">
 							Move
 						</button>
-						<button type="button" class="btn btn-outline-light" tool="Delete" onclick="activeTool(this)">
+						<button type="button" class="btn btn-outline-light fw-bold" tool="Delete" onclick="activeTool(this)">
 							Delete
 						</button>
 					</div>
 					<div class="navGroupTools">
-						<label type="button" class="btn btn-outline-light" style="margin:0px">
+						<label type="button" class="btn btn-outline-light fw-bold" style="margin:0px">
 							<input id="projectFile" type="file" />
-							Load
+								Load
 						</label>
 						<a download="LogicCircuit00" href="#" id="saveProjectFile">
-							<button type="button" class="btn btn-outline-light">
+							<button type="button" class="btn btn-outline-light fw-bold">
 								Save
 							</button>
 						</a>

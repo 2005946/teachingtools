@@ -1,0 +1,68 @@
+﻿@page
+@model teachingtools.Pages.Account.AccountModel
+@{
+}
+
+@using Microsoft.AspNetCore.Identity
+@using teachingtools.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+<link rel="stylesheet" href="~/css/subscriptions.css" asp-append-version="true" />
+
+<div class="row">
+    <div class="col-sm my-auto">
+        <div class="container-subscription free-container">
+            <div class="container-buttons">
+                <div class="row">
+                    <div class="col d-inline text-center align-middle container-header">
+                        <a>Your Subscription</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="bullet-points">
+                        <ul>
+                            <li>
+                                Limited access to some topics
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="free text-center align-bottom">
+                        <b>Free</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm my-auto">
+        <div class="container-subscription">
+            <div class="container-buttons">
+                <div class="row">
+                    <div class="col d-inline text-center align-middle container-header">
+                        <a>Account</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="user-details">
+                        Email = @User.Identity.Name
+                        Password = **************
+                    </div>
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                    <div class="subscribe align-content-center">
+                        <form method="post">
+                            <button type="submit">Log Out</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

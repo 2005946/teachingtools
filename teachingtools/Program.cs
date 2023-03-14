@@ -14,7 +14,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = new PathString("/Index");
-    options.AccessDeniedPath = new PathString("/Privacy");
+    options.AccessDeniedPath = new PathString("/AccessDenied");
     options.LogoutPath = new PathString("/Index");
 }
 );
@@ -24,10 +24,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication();
 
-
 var app = builder.Build();
-
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
