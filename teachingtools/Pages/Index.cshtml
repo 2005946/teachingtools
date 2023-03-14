@@ -14,40 +14,47 @@
     </div>
     <div class="col-sm my-auto">
         <div class="container-details">
-            <div class="container-buttons">
-                <div class="row">
-                    <div class="col d-inline text-center align-middle container-login">
-                        <a id="login-text">Log In</a>
-                    </div>
-                    <div class="col d-inline text-center align-middle container-register">
-                        <a id="register-text" asp-page="/Account/Register">Register</a>
-                    </div>
-                </div>
-            </div>
-            <form asp-page-handler="Login" method="post">
-                <div id="container-input-login" class="container-input-login">
-                    <div asp-validation-summary="All"></div>
+            @if (User.Identity.IsAuthenticated == false)
+            {
+                <div class="container-buttons">
                     <div class="row">
-                        <div class="container-email">
-                            <input type="text" class="input-email" placeholder="eMail" asp-for="Input.Email" />
+                        <div class="col d-inline text-center align-middle container-login">
+                            <a id="login-text">Log In</a>
+                        </div>
+                        <div class="col d-inline text-center align-middle container-register">
+                            <a id="register-text" asp-page="/Account/Register">Register</a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="container-password">
-                            <input type="password" class="input-password" placeholder="Password" asp-for="Input.Password" />
-                            <div class="forgot-password">
-                                <a>Forgotten password?</a>
+                </div>
+                <form asp-page-handler="Login" method="post">
+                    <div id="container-input-login" class="container-input-login">
+                        <div asp-validation-summary="All"></div>
+                        <div class="row">
+                            <div class="container-email">
+                                <input type="text" class="input-email" placeholder="eMail" asp-for="Input.Email" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="container-password">
+                                <input type="password" class="input-password" placeholder="Password" asp-for="Input.Password" />
+                                <div class="forgot-password">
+                                    <a>Forgotten password?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div onclick="login()" class="button">
+                                Login
+                                <button id="login" name="login" type="submit"></button>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div onclick="login()" class="button">
-                            Login
-                            <button id="login" name="login" type="submit"></button>
-                        </div>
-                    </div>
-                </div>
-            </form>
+                </form>
+            }
+            else
+            {
+                
+            }
         </div>
     </div>
 </div>
