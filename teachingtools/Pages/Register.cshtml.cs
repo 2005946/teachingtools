@@ -40,7 +40,7 @@ namespace teachingtools.Pages
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-            return Page();
+            return RedirectToPage("/Register");
         }
     }
 }

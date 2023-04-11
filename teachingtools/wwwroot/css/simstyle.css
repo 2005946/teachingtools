@@ -104,8 +104,8 @@ input[type="file"] {
 
 .logicgates img {
     width: 70px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 .logicgates button:hover {
@@ -116,6 +116,63 @@ input[type="file"] {
 .logicgates button:active {
     background-color: rgba(0,0,0,0.2);
     transition: ease-in-out 0.0s;
+}
+
+.gate-info{
+    display: none;
+    position: absolute;
+    width: 390px;
+    background-color: white;
+    border: black solid 1px;
+    border-radius: 10px;
+    padding: 5px;
+    transform: translate(-5px,72px);
+}
+
+.gate-name{
+    font-size: 24px;
+}
+
+.gate-description{
+    font-size: 14px;
+}
+
+.table-header{
+    margin-top: 5px;
+}
+
+.truth-table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gate-name, .gate-description, .table-header, .truth-table, td, th{
+    color: black !important;
+}
+
+.instructions-container{
+    margin-left: 5px;
+}
+
+table{
+    width: 100%;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.header {
+    margin-left: 15px;
+    font-size: 24px;
+    color: black !important;
+}
+
+.instructions{
+    color: black !important;
+}
+
+.instructions b{
+    color: black !important;
 }
 
 .canvas-container{

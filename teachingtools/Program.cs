@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using teachingtools.Data;
 using System.Runtime.CompilerServices;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,29 +27,13 @@ builder.Services.AddAuthentication();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+using (var scope = app.Services.CreateScope())
 {
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
+    var services = scope.ServiceProvider;
+    var RoleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+    var UserManager = services.GetRequiredService<UserManager<ApplicationUser>>();
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-app.UseRouting();
-app.UseAuthentication();
-app.UseAuthorization();
-app.MapRazorPages();
-app.Run();
-
-async Task CreateRoles(IServiceProvider serviceProvider)
-{
-    //Resolve ASP .NET Core Identity with DI help
-    var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-    // do you things here
-    string[] roleNames = { "Admin", "Subscriber", "Member"};
+    string[] roleNames = { "Admin", "Subscriber", "Member" };
     foreach (var roleName in roleNames)
     {
         bool roleExists = await RoleManager.RoleExistsAsync(roleName);
@@ -64,3 +49,18 @@ async Task CreateRoles(IServiceProvider serviceProvider)
     }
 }
 
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapRazorPages();
+app.Run();

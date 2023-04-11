@@ -62,16 +62,29 @@
     margin-top: 25px;
 }
 
+.text-info{
+    font-size: 14px;
+    color: white !important;
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-left: 50px;
+}
+
 .pricing{
     width: 100%;
-    margin-top: 25px;
     margin-left: 50px;
 }
 
 .price{
     font-size: 48px;
     display: inline-block;
-    margin-left: 25px;
+    border-radius: 10px;
+    padding: 5px 20px 5px 20px;
+}
+
+.price:hover{
+    
+    background-color: rgba(0,0,0,0.5)
 }
 
 .per-text{

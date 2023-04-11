@@ -53,39 +53,399 @@
 						<button type="button" tool="LogicInput" title="Logic Input" onclick="activeTool(this)"
 								class="pl-1">
 							<img src="simulator/img/LogicInput.svg" class="ml-2" width="32">
+							<div class="row">
+								<div class="text-black">
+									INPUT
+								</div>
+							</div>
 						</button>
 						<button type="button" tool="LogicOutput" title="Logic Output" onclick="activeTool(this)"
 								class="pl-1">
 							<img src="simulator/img/LogicOutput.svg" class="ml-2" width="32">
+							<div class="row">
+								<div class="text-black">
+									OUTPUT
+								</div>
+							</div>
 						</button>
 					</div>
 					<div class="logicgates">
 						<div class="text-center align-middle">
-							<h3 class="display-8 text-black fw-bold">Gates</h3>
+							<h3 class="display-10 text-black fw-bold">Gates</h3>
 						</div>
-						<button type="button" tool="NOT" isGate="true" onclick="activeTool(this)" class="pl-1" title="NOT Gate">
+						<button type="button" tool="NOT" isGate="true" onmouseover="showInfo('gate-info-not')" onmouseout="hideInfo('gate-info-not')" onclick="activeTool(this)" id="not" class="pl-1" title="NOT Gate">
+							<div id="gate-info-not" class="gate-info">
+								<div class="row">
+									<div class="gate-name">
+										NOT Gate
+									</div>
+									<div class="gate-description">
+										The NOT gate is used to invert it's only input.
+									</div>
+								</div>
+								<div class="row">
+									<div class="table-header">
+										Truth Table
+									</div>
+									<div class="truth-table">
+										<table>
+											<tr>
+												<th>A</th>
+												<th>Output</th>
+											</tr>
+											<tr>
+												<td>0</td>
+												<td>1</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>0</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
 							<img src="simulator/img/NOT.svg" width="50">
+							<div class="row">
+								<div class="text-black">
+									NOT
+								</div>
+							</div>
 						</button>
-						<button type="button" tool="AND" isGate="true" onclick="activeTool(this)" class="pl-1" title="AND Gate">
+						<button type="button" tool="AND" isGate="true" id="and" onmouseover="showInfo('gate-info-and')" onmouseout="hideInfo('gate-info-and')" onclick="activeTool(this)" class="pl-1" title="AND Gate">
+							<div id="gate-info-and" class="gate-info">
+								<div class="row">
+									<div class="gate-name">
+										AND Gate
+									</div>
+									<div class="gate-description">
+										For the AND gate both inputs must be a 1 for the Output to become 1. Otherwise will become 0.
+									</div>
+								</div>
+								<div class="row">
+									<div class="table-header">
+										Truth Table
+									</div>
+									<div class="truth-table">
+										<table>
+											<tr>
+												<th>A</th>
+												<th>B</th>
+												<th>Output</th>
+											</tr>
+											<tr>
+												<td>0</td>
+												<td>0</td>
+												<td>0</td>
+											</tr>
+											<tr>
+												<td>0</td>
+												<td>1</td>
+												<td>0</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>0</td>
+												<td>0</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>1</td>
+												<td>1</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
 							<img src="simulator/img/AND.svg" width="50">
+							<div class="row">
+								<div class="text-black">
+									AND
+								</div>
+							</div>
 						</button>
-						<button type="button" tool="NAND" isGate="true" onclick="activeTool(this)" class="pl-1" title="NAND Gate">
+						<button type="button" tool="NAND" onmouseover="showInfo('gate-info-nand')" onmouseout="hideInfo('gate-info-nand')" isGate="true" onclick="activeTool(this)" class="pl-1" title="NAND Gate">
+							<div id="gate-info-nand" class="gate-info">
+								<div class="row">
+									<div class="gate-name">
+										NAND Gate
+									</div>
+									<div class="gate-description">
+										The NAND gate tries doing the oppositve of the AND gate. Where two or less inputs must be 0 for the output to be 1.
+									</div>
+								</div>
+								<div class="row">
+									<div class="table-header">
+										Truth Table
+									</div>
+									<div class="truth-table">
+										<table>
+											<tr>
+												<th>A</th>
+												<th>B</th>
+												<th>Output</th>
+											</tr>
+											<tr>
+												<td>0</td>
+												<td>0</td>
+												<td>1</td>
+											</tr>
+											<tr>
+												<td>0</td>
+												<td>1</td>
+												<td>1</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>0</td>
+												<td>1</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>1</td>
+												<td>0</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
 							<img src="simulator/img/NAND.svg" width="50">
+							<div class="row">
+								<div class="text-black">
+									NAND
+								</div>
+							</div>
 						</button>
-						<button type="button" tool="OR" isGate="true" onclick="activeTool(this)" class="pl-1" title="OR Gate">
+						<button type="button" tool="OR" isGate="true" onmouseover="showInfo('gate-info-or')" onmouseout="hideInfo('gate-info-or')" onclick="activeTool(this)" class="pl-1" title="OR Gate">
+							<div id="gate-info-or" class="gate-info">
+								<div class="row">
+									<div class="gate-name">
+										OR Gate
+									</div>
+									<div class="gate-description">
+										The OR gate only needs a single input to be a 1 for the output to become 1.
+									</div>
+								</div>
+								<div class="row">
+									<div class="table-header">
+										Truth Table
+									</div>
+									<div class="truth-table">
+										<table>
+											<tr>
+												<th>A</th>
+												<th>B</th>
+												<th>Output</th>
+											</tr>
+											<tr>
+												<td>0</td>
+												<td>0</td>
+												<td>0</td>
+											</tr>
+											<tr>
+												<td>0</td>
+												<td>1</td>
+												<td>1</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>0</td>
+												<td>1</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>1</td>
+												<td>1</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
 							<img src="simulator/img/OR.svg" width="50">
+							<div class="row">
+								<div class="text-black">
+									OR
+								</div>
+							</div>
 						</button>
-						<button type="button" tool="NOR" isGate="true" onclick="activeTool(this)" class="pl-1" title="NOR Gate">
+						<button type="button" tool="NOR" isGate="true" onmouseover="showInfo('gate-info-nor')" onmouseout="hideInfo('gate-info-nor')" onclick="activeTool(this)" class="pl-1" title="NOR Gate">
+							<div id="gate-info-nor" class="gate-info">
+								<div class="row">
+									<div class="gate-name">
+										NOR Gate
+									</div>
+									<div class="gate-description">
+										The NOR gate flips the logic of the OR gate. Where both inputs must be 0 for the output to become 1.
+									</div>
+								</div>
+								<div class="row">
+									<div class="table-header">
+										Truth Table
+									</div>
+									<div class="truth-table">
+										<table>
+											<tr>
+												<th>A</th>
+												<th>B</th>
+												<th>Output</th>
+											</tr>
+											<tr>
+												<td>0</td>
+												<td>0</td>
+												<td>1</td>
+											</tr>
+											<tr>
+												<td>0</td>
+												<td>1</td>
+												<td>0</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>0</td>
+												<td>0</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>1</td>
+												<td>0</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
 							<img src="simulator/img/NOR.svg" width="50">
+							<div class="row">
+								<div class="text-black">
+									NOR
+								</div>
+							</div>
 						</button>
-						<button type="button" tool="XOR" isGate="true" onclick="activeTool(this)" class="pl-1" title="XOR Gate">
+						<button type="button" tool="XOR" isGate="true" onmouseover="showInfo('gate-info-xor')" onmouseout="hideInfo('gate-info-xor')" onclick="activeTool(this)" class="pl-1" title="XOR Gate">
+							<div id="gate-info-xor" class="gate-info">
+								<div class="row">
+									<div class="gate-name">
+										XOR Gate
+									</div>
+									<div class="gate-description">
+										The XOR gate is an exclusive type gate. It means that both inputs can't be in the same state but if two inputs are differen then the output becomes 1.
+									</div>
+								</div>
+								<div class="row">
+									<div class="table-header">
+										Truth Table
+									</div>
+									<div class="truth-table">
+										<table>
+											<tr>
+												<th>A</th>
+												<th>B</th>
+												<th>Output</th>
+											</tr>
+											<tr>
+												<td>0</td>
+												<td>0</td>
+												<td>0</td>
+											</tr>
+											<tr>
+												<td>0</td>
+												<td>1</td>
+												<td>1</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>0</td>
+												<td>1</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>1</td>
+												<td>0</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
 							<img src="simulator/img/XOR.svg" width="50">
+							<div class="row">
+								<div class="text-black">
+									XOR
+								</div>
+							</div>
 						</button>
-						<button type="button" tool="XNOR" isGate="true" onclick="activeTool(this)" class="pl-1" title="XNOR Gate">
+						<button type="button" tool="XNOR" isGate="true" onmouseover="showInfo('gate-info-xnor')" onmouseout="hideInfo('gate-info-xnor')" onclick="activeTool(this)" class="pl-1" title="XNOR Gate">
+							<div id="gate-info-xnor" class="gate-info">
+								<div class="row">
+									<div class="gate-name">
+										XNOR Gate
+									</div>
+									<div class="gate-description">
+										The XNOR gate is an exclusive type gate although it flips the logic of the XOR gate. Now it will allow both inputs to be either 0 or 1 for the output to become 1.
+									</div>
+								</div>
+								<div class="row">
+									<div class="table-header">
+										Truth Table
+									</div>
+									<div class="truth-table">
+										<table>
+											<tr>
+												<th>A</th>
+												<th>B</th>
+												<th>Output</th>
+											</tr>
+											<tr>
+												<td>0</td>
+												<td>0</td>
+												<td>1</td>
+											</tr>
+											<tr>
+												<td>0</td>
+												<td>1</td>
+												<td>0</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>0</td>
+												<td>0</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>1</td>
+												<td>1</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
 							<img src="simulator/img/XNOR.svg" width="50">
+							<div class="row">
+								<div class="text-black">
+									XNOR
+								</div>
+							</div>
 						</button>
+					</div>	
+					<div class="row">
+						<div class="instructions-container">
+							<div class="header">
+								Instructions
+							</div>
+							<div class="instructions">
+								<b>Add a gate by</b>
+								<br />
+								Clicking<br />
+
+								<b>Place the gate by</b>
+								<br />
+								Clicking on the canvas<br />
+
+								<b>Change state of inputs</b>
+								<br />
+								by Double Clicking
+							</div>
+						</div>
 					</div>
-				</div>
+				</div>				
 				<div class="canvas-container">
 					<!-- Simulator Canvas -->
 					<div id="canvas-sim"></div>
@@ -95,5 +455,6 @@
 	</div>
 </div>
 
+<script src="~/js/gatesinfo.js" asp-append-version="true"></script>
 <script src="vendor/js/p5.min.js"></script>
 <script type="module" src="simulator/js/simulator.js"></script>

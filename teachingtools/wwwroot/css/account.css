@@ -85,22 +85,67 @@
     font-size: 16px;
 }
 
-.subscribe{
-    width: 390px;
-    margin-left: 25px;
-    margin-top: 25px;
+.free{
+    margin-top: 80%;
+    font-size: 48px;
 }
 
-.subscribe button{
+.user-details{
+    font-size: 24px;
+    margin-top: 25px;   
+}
+
+.email, .password{
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+.email input, .password input {
+    width: 390px;
+    border-radius: 10px;
+    height: 50px;
+    padding-left: 12px;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    margin-top: 5px;
+    color: gray !important;
+}
+
+.alter {
+    width: 390px;
+    margin-left: 25px;
+}
+
+.alter button {
+    width: 390px;
+    border-radius: 10px;
+    border: white 5px solid;
+    background: none;
+    padding: 2px 25px 2px 25px;
+    transition: ease-in-out 0.3s;
+}
+
+.alter button:hover {
+    width: 390px;
+    color: black !important;
+    border-radius: 10px;
+    border: white 5px solid;
+    background: white;
+    padding: 2px 25px 2px 25px;
+    transition: ease-in-out 0.3s;
+}
+
+.logout {
+    width: 390px;
+    margin-left: 25px;
+    margin-top: 169px;
+}
+
+.logout button {
     width: 390px;
     color: black !important;
     border-radius: 10px;
     border: none;
     background-color: white;
     padding: 2px 25px 2px 25px;
-}
-
-.free{
-    margin-top: 80%;
-    font-size: 48px;
 }

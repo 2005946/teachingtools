@@ -10,7 +10,7 @@
 @inject UserManager<ApplicationUser> UserManager
 
 
-<link rel="stylesheet" href="~/css/subscriptions.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/account.css" asp-append-version="true" />
 
 <div class="row">
     <div class="col-sm my-auto">
@@ -48,16 +48,27 @@
                 </div>
                 <div class="row">
                     <div class="user-details">
-                        Email = @User.Identity.Name
-                        Password = **************
+                        <div class="row">
+                            <div class="email">
+                                Email<br />
+                                <input type="text" value="@User.Identity.Name" disabled/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="password">
+                                Password<br />
+                                <input type="text" value="**************" disabled />
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="alter align-content-center">
+                                <button>Change password</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
-                </div>
-                <div class="row">
-                </div>
-                <div class="row">
-                    <div class="subscribe align-content-center">
+                    <div class="logout align-content-center">
                         <form method="post">
                             <button type="submit">Log Out</button>
                         </form>
