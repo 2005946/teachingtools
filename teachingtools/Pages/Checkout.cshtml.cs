@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -8,7 +9,8 @@ using teachingtools.Data;
 
 namespace teachingtools.Pages
 {
-    public class CheckoutModel : PageModel
+	[Authorize]
+	public class CheckoutModel : PageModel
     {
 
         public double Total = 0.99;

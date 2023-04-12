@@ -28,7 +28,10 @@ namespace teachingtools.Pages
         {
             var user = await _userManager.GetUserAsync(User);
             var subUser = await _db.Subscriptions.FindAsync(user.UserName);
-            subType = subUser.SubscriptionType;
+            if (subUser != null)
+            {
+				subType = subUser.SubscriptionType;
+			}  
         }
 
         public async Task<IActionResult> OnPostAsync()
