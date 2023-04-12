@@ -97,7 +97,7 @@ a {
     text-align: center;
 }
 
-.button button{
+.button button {
     display: none;
 }
 
@@ -105,4 +105,5 @@ a {
     background-color: white;
     color: black !important;
     transition: ease-in-out 0.3s;
+    cursor: pointer;
 }

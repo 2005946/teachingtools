@@ -4,13 +4,9 @@ import { WireManager } from "./circuit_components/Wire.js";
 import { FileManager } from "./FileManager.js"
 
 export let gateIMG = []; // gates images
-export let IC_IMG = []; // integrated circuits images
 export let gate = [];
 export let logicInput = [];
 export let logicOutput = [];
-export let logicClock = [];
-export let srLatch = [];
-export let flipflop = [];
 export let wireMng;
 export let colorMouseOver = [0 ,0x7B, 0xFF];
 export let fileManager = new FileManager();
@@ -27,15 +23,6 @@ export function preload() {
     gateIMG.push(loadImage('simulator/img/NOR.svg'));
     gateIMG.push(loadImage('simulator/img/XOR.svg'));
     gateIMG.push(loadImage('simulator/img/XNOR.svg'));
-
-    IC_IMG.push(loadImage('simulator/img/SR_Latch.svg')); // For testing usage
-    IC_IMG.push(loadImage('simulator/img/SR_Latch.svg'));
-    IC_IMG.push(loadImage('simulator/img/SR_Latch_Sync.svg'));
-    IC_IMG.push(loadImage('simulator/img/FF_D.svg'));
-    IC_IMG.push(loadImage('simulator/img/FF_D_MS.svg'));
-    IC_IMG.push(loadImage('simulator/img/FF_T.svg'));
-    IC_IMG.push(loadImage('simulator/img/FF_JK.svg'));
-
 }
 
 /**
@@ -81,15 +68,6 @@ export function draw() {
     for (let i = 0; i < logicOutput.length; i++)
         logicOutput[i].draw();
 
-    for (let i = 0; i < logicClock.length; i++)
-        logicClock[i].draw();
-
-    for (let i = 0; i < srLatch.length; i++)
-        srLatch[i].draw();
-
-    for (let i = 0; i < flipflop.length; i++)
-        flipflop[i].draw();
-
     if(fileManager.isLoadingState)
         fileManager.isLoadingState = false;
 
@@ -109,15 +87,6 @@ export function mousePressed() {
 
     for (let i = 0; i < logicOutput.length; i++)
         logicOutput[i].mousePressed();
-
-    for (let i = 0; i < logicClock.length; i++)
-        logicClock[i].mousePressed();
-
-    for (let i = 0; i < srLatch.length; i++)
-        srLatch[i].mousePressed();
-
-    for (let i = 0; i < flipflop.length; i++)
-        flipflop[i].mousePressed();
 }
 
 /**
@@ -132,15 +101,6 @@ export function mouseReleased() {
 
     for (let i = 0; i < logicOutput.length; i++)
         logicOutput[i].mouseReleased();
-
-    for (let i = 0; i < logicClock.length; i++)
-        logicClock[i].mouseReleased();
-
-    for (let i = 0; i < srLatch.length; i++)
-        srLatch[i].mouseReleased();
-
-    for (let i = 0; i < flipflop.length; i++)
-        flipflop[i].mouseReleased();
 }
 
 /**
@@ -168,15 +128,6 @@ export function mouseClicked() {
         for (let i = 0; i < logicOutput.length; i++)
             logicOutput[i].mouseClicked();
 
-        for (let i = 0; i < logicClock.length; i++)
-            logicClock[i].mouseClicked();
-
-        for (let i = 0; i < srLatch.length; i++)
-            srLatch[i].mouseClicked();
-
-        for (let i = 0; i < flipflop.length; i++)
-            flipflop[i].mouseClicked();
-
     } else if (currMouseAction == MouseAction.DELETE) {
         //
         for (let i = 0; i < gate.length; i++) {
@@ -200,30 +151,6 @@ export function mouseClicked() {
                 logicOutput[i].destroy();
                 delete logicOutput[i];
                 logicOutput.splice(i, 1);
-            }
-        }
-
-        for (let i = 0; i < logicClock.length; i++) {
-            if (logicClock[i].mouseClicked()) {
-                logicClock[i].destroy();
-                delete logicClock[i];
-                logicClock.splice(i, 1);
-            }
-        }
-
-        for (let i = 0; i < srLatch.length; i++) {
-            if (srLatch[i].mouseClicked()) {
-                srLatch[i].destroy();
-                delete srLatch[i];
-                srLatch.splice(i, 1);
-            }
-        }
-
-        for (let i = 0; i < flipflop.length; i++) {
-            if (flipflop[i].mouseClicked()) {
-                flipflop[i].destroy();
-                delete flipflop[i];
-                flipflop.splice(i, 1);
             }
         }
     }

@@ -168,11 +168,13 @@ table{
 }
 
 .instructions{
-    color: black !important;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.instructions b{
+.instructions .row {
     color: black !important;
+    font-size: 16px !important;
 }
 
 .canvas-container{
