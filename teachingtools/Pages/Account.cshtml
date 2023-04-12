@@ -14,27 +14,140 @@
 
 <div class="row">
     <div class="col-sm my-auto">
-        <div class="container-subscription free-container">
+        <div id="subs" class="container-subscription free-container">
             <div class="container-buttons">
                 <div class="row">
-                    <div class="col d-inline text-center align-middle container-header">
+                    <div id="subs-header" class="col d-inline text-center align-middle container-header">
                         <a>Your Subscription</a>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="bullet-points">
-                        <ul>
-                            <li>
-                                Limited access to some topics
-                            </li>
-                        </ul>
+                @if (Model.subType == false && User.IsInRole("Subscriber"))
+                {
+                    <div class="row">
+                        <div class="bullet-points">
+                            <ul>
+                                <li>
+                                    Access to all teaching topics
+                                </li>
+                                <li>
+                                    Ability to save your work
+                                </li>
+                                <li>
+                                    Access to more resources
+                                </li>
+                                <li>
+                                    Ability to share your work
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="free text-center align-bottom">
-                        <b>Free</b>
+                    <div class="row">
+                        <div class="row">
+                            <div class="text-info">
+                                Below you can see which subscription plan you have chosen
+                            </div>
+                        </div>
+                        <div class="pricing">
+                            <div style="background-color: rgba(0,0,0,0.5);" class="price">
+                                <b>£0.99</b>
+                                <br />
+                                <div class="text-white per-text">
+                                    per month
+                                </div>
+                            </div>
+                            <div style="opacity: 50%;" class="price">
+                                <b>£9.99</b>
+                                <br />
+                                <div class="text-white per-text">
+                                    per year
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="disclaimer text-white text-center">
+                            You can <b>cancel</b> your subscription <br /><b>anytime</b>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cancel align-content-center">
+                            <a asp-page="/Subscriptions">
+                                <button disabled>Cancel Subscription</button>
+                            </a>
+                        </div>
+                    </div>
+                }else if (Model.subType == true && User.IsInRole("Subscriber"))
+                {
+                    <div class="row">
+                        <div class="bullet-points">
+                            <ul>
+                                <li>
+                                    Access to all teaching topics
+                                </li>
+                                <li>
+                                    Ability to save your work
+                                </li>
+                                <li>
+                                    Access to more resources
+                                </li>
+                                <li>
+                                    Ability to share your work
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <div class="text-info">
+                                Below you can see which subscription plan you have chosen
+                            </div>
+                        </div>
+                        <div class="pricing">
+                            <div style="opacity: 50%;" class="price">
+                                <b>£0.99</b>
+                                <br />
+                                <div class="text-white per-text">
+                                    per month
+                                </div>
+                            </div>
+                            <div style="background-color: rgba(0,0,0,0.5);" class="price">
+                                <b>£9.99</b>
+                                <br />
+                                <div class="text-white per-text">
+                                    per year
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="disclaimer text-white text-center">
+                            You can <b>cancel</b> your subscription <br /><b>anytime</b>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cancel align-content-center">
+                            <a asp-page="/Subscriptions">
+                                <button disabled>Cancel Subscription</button>
+                            </a>
+                        </div>
+                    </div>
+                }else if (User.IsInRole("Member"))
+                {
+                    <div class="row">
+                        <div class="bullet-points">
+                            <ul>
+                                <li>
+                                    Limited access to some topics
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="free text-center align-bottom">
+                            <b>Free</b>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>

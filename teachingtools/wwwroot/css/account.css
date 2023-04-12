@@ -64,8 +64,8 @@
 
 .pricing{
     width: 100%;
-    margin-top: 25px;
-    margin-left: 50px;
+    margin-top: 15px;
+    margin-left: 25px;
 }
 
 .price{
@@ -148,4 +148,65 @@
     border: none;
     background-color: white;
     padding: 2px 25px 2px 25px;
+}
+
+.bullet-points {
+    font-size: 24px;
+}
+
+.bullet-points ul li {
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+.text-info {
+    font-size: 14px;
+    color: white !important;
+    margin-left: 15px;
+}
+
+.pricing {
+    width: 100%;
+}
+
+.price {
+    font-size: 48px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 5px 20px 5px 20px;
+    transition: ease-in-out 0.3s;
+}
+
+.per-text {
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 25px;
+    margin-top: -10px;
+}
+
+.disclaimer {
+    font-size: 16px;
+}
+
+.cancel {
+    width: 390px;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.cancel button {
+    width: 390px;
+    color: black !important;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    padding: 2px 25px 2px 25px;
+    transition: ease-in-out 0.3s;
+}
+
+#subs {
+    border-color: #1FAFA7;
+}
+#subs-header {
+    background-color: #1FAFA7;
 }

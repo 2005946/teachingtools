@@ -26,17 +26,24 @@
 							Delete
 						</button>
 					</div>
-					<div class="navGroupTools">
-						<label type="button" class="btn btn-outline-light fw-bold" style="margin:0px">
-							<input id="projectFile" type="file" />
+					@if (User.IsInRole("Subscriber"))
+					{
+						<div class="navGroupTools">
+							<label type="button" class="btn btn-outline-light fw-bold" style="margin:0px">
+								<input id="projectFile" type="file" />
 								Load
-						</label>
-						<a download="LogicCircuit00" href="#" id="saveProjectFile">
-							<button type="button" class="btn btn-outline-light fw-bold">
-								Save
-							</button>
-						</a>
-					</div>
+							</label>
+							<a download="LogicCircuit00" href="#" id="saveProjectFile">
+								<button type="button" class="btn btn-outline-light fw-bold">
+									Save
+								</button>
+							</a>
+						</div>
+					}
+					else
+					{
+						
+					}	
 				</li>
 			</ul>
 		</div>

@@ -7,7 +7,6 @@ namespace teachingtools.Pages
 {
     public class SubscriptionsModel : PageModel
     {
-
         private AppDbContext _db;
 
         public readonly UserManager<ApplicationUser> _userManager;

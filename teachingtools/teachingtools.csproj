@@ -21,6 +21,7 @@
     </PackageReference>
     <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
     <PackageReference Include="ReturnTrue.AspNetCore.Net.SmtpClient" Version="1.2.0" />
+    <PackageReference Include="Stripe.net" Version="41.13.0" />
   </ItemGroup>
 
   <ItemGroup>

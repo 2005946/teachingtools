@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using teachingtools.Data;
 using System.Runtime.CompilerServices;
 using System;
+using System.Configuration;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,8 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LogoutPath = new PathString("/Index");
 }
 );
+
+builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -56,6 +60,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+StripeConfiguration.ApiKey = app.Configuration.GetSection("Stripe")["SecretKey"];
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

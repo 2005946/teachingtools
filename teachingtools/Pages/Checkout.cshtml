@@ -1,0 +1,67 @@
+﻿@page
+@model teachingtools.Pages.CheckoutModel
+@{
+    ViewData["Title"] = "Checkout";
+}
+@using teachingtools.Data
+@using Microsoft.Extensions.Options
+@inject IOptions<StripeSettings> Stripe
+
+<link rel="stylesheet" href="~/css/checkout.css" asp-append-version="true" />
+
+<div class="row">
+    <div class="col-sm my-auto">
+        <div class="container-faq">
+            <div class="container-buttons">
+                <div class="row">
+                    <div class="col d-inline text-center align-middle container-header">
+                        <a>Checkout</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="checkout-container">
+                        <div class="row">
+                            <div class="plan">
+                                @{
+                                    if (Model.AmountPayable == 099){
+                                        <div class="plan-text">
+                                            You have selected the monthly plan
+                                        </div>
+                                    }
+                                    else if (Model.AmountPayable == 999)
+                                    {
+                                        <div class ="plan-text">
+                                            You have selected the yearly plan
+                                        </div>
+                                    }
+                                } 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="price">
+                                Balance to pay: £@Model.Total
+                            </div>
+                            <div class="message">
+                                The subscription will not automatically renew at the end of the subscription plan.
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="button-stripe">
+                                <form asp-page-handler="Charge" asp-route-amount="@Model.AmountPayable" method="post">
+                                    <script src="//checkout.stripe.com/v2/checkout.js"
+                                            class="stripe-button"
+                                            data-key="@Stripe.Value.PublishableKey"
+                                            data-locale="auto"
+                                            data-description="Teaching Tools"
+                                            data-amount="@Model.AmountPayable"
+                                            data-currency="GBP">
+                                    </script>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

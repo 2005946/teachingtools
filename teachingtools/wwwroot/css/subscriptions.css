@@ -75,16 +75,18 @@
     margin-left: 50px;
 }
 
-.price{
+.price {
     font-size: 48px;
     display: inline-block;
     border-radius: 10px;
     padding: 5px 20px 5px 20px;
+    transition: ease-in-out 0.3s;
 }
 
 .price:hover{
-    
-    background-color: rgba(0,0,0,0.5)
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.5) !important;
+    transition: ease-in-out 0.3s;
 }
 
 .per-text{
@@ -104,13 +106,24 @@
     margin-top: 25px;
 }
 
-.subscribe button{
+.subscribe button {
     width: 390px;
     color: black !important;
     border-radius: 10px;
     border: none;
     background-color: white;
     padding: 2px 25px 2px 25px;
+    transition: ease-in-out 0.3s;
+}
+
+.subscribe button[disabled] {
+    width: 390px;
+    color: gray !important;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(0,0,0,0.5);
+    padding: 2px 25px 2px 25px;
+    transition: ease-in-out 0.3s;
 }
 
 .free{

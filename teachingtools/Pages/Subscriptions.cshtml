@@ -69,20 +69,22 @@
                         </div>
                     </div>
                     <div class="pricing">
-                        <div class="price">
+                        <div id="price-month" onclick="tickMonthly()" class="price">
                             <b>£0.99</b>
                             <br />
                             <div class="text-white per-text">
                                 per month
                             </div>
                         </div>
-                        <div class="price">
+                        <input type="radio" id="monthly" value="0.99" hidden/>
+                        <div id="price-year" onclick="tickYearly()" class="price">
                             <b>£9.99</b>
                             <br />
                             <div class="text-white per-text">
                                 per year
                             </div>
                         </div>
+                        <input type="radio" id="yearly" value="9.99" hidden/>
                     </div>
                 </div>
                 <div class="row">
@@ -94,7 +96,17 @@
                     <div class="subscribe align-content-center">
                         @if (User.Identity.IsAuthenticated == true)
                         {
-                            <button>Buy Now</button>
+                            if (User.IsInRole("Subscriber") && User.IsInRole("Member")){
+                                <a asp-page="/Checkout">
+                                    <button id="checkout-button" disabled>Buy Now</button>
+                                </a>
+
+                            }else if (User.IsInRole("Member"))
+                            {
+                                <a asp-page="/Checkout">
+                                    <button id="checkout-button" disabled>Buy Now</button>
+                                </a>
+                            }
                         }else{
                             <a asp-page="/Index">
                                 <button onclick="logInAlert()" type="button">
@@ -108,6 +120,8 @@
         </div>
     </div>
 </div>
+
+<script src="~/js/subscriptions.js" asp-append-version="true"></script>
 
 <script>
     function logInAlert(){

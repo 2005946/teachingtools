@@ -16,5 +16,7 @@ namespace teachingtools.Data
         {
             options.UseSqlServer(Configuration.GetConnectionString("AppDbContext"));
         }
+
+        public DbSet<Subscriptions> Subscriptions { get; set; }
     }
 }
