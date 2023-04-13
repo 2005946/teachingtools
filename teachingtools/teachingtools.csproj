@@ -52,8 +52,4 @@
     <None Include="wwwroot\vendor\js\popper.min.js" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\simulator\css\" />
-  </ItemGroup>
-
 </Project>

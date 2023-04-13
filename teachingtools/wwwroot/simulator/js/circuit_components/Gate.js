@@ -1,3 +1,5 @@
+// code retrieved from drendog, Jun 18 2020
+
 import { currMouseAction, backToEdit } from "../menutools.js"
 import { gateIMG } from "../simulator.js";
 import { gateType, MouseAction } from "./Enums.js"
@@ -228,3 +230,5 @@ export class Gate {
     }
 
 };
+
+//end of retrieved code

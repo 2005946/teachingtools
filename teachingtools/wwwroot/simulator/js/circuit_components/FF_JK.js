@@ -1,3 +1,5 @@
+// code retrieved from drendog, Jun 18 2020
+
 import { FF_D_MasterSlave } from "./FF_D.js";
 import { Gate } from "./Gate.js";
 import { IC_type } from "./Enums.js";
@@ -127,3 +129,5 @@ export class FF_JK extends Integrated {
     }
 
 }
+
+//end of retrieved code

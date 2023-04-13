@@ -1,3 +1,5 @@
+// code retrieved from drendog, Jun 18 2020
+
 import { LogicInput } from "./LogicInput.js";
 
 /**
@@ -44,3 +46,5 @@ export class Clock extends LogicInput {
         text(this.strInfo, this.posX - 20, this.posY + 25);
     }
 };
+
+//end of retrieved code

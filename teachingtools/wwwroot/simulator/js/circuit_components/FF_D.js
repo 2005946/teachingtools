@@ -1,3 +1,5 @@
+// code retrieved from drendog, Jun 18 2020
+
 import { IC_type, gateType } from "./Enums.js";
 import { Integrated } from "./Integrated.js";
 import { Node } from "./Node.js";
@@ -158,3 +160,5 @@ export class FF_D_MasterSlave extends FF_D {
         circle(this.posX + 17, this.posY + this.height - 30, 8);
     }
 }
+
+//end of retrieved code

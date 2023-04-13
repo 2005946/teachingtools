@@ -5,6 +5,7 @@
     border-radius: 25px;
     margin-top: 25px;
     overflow: hidden;
+    overflow-y: scroll;
     margin-left: auto;
     margin-right: auto;
 }
@@ -36,9 +37,13 @@
 }
 
 .bullet-points ul li {
-    margin-left: 100px;
-    margin-right: auto;
+    margin-left: 25px;
+    margin-right: 25px;
     margin-top: 25px;
+}
+
+li p{
+    font-size: 16px;
 }
 
 .container-buttons {

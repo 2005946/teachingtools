@@ -1,3 +1,5 @@
+// code retrieved from drendog, Jun 18 2020
+
 import { Gate } from "./Gate.js";
 import { IC_type, gateType } from "./Enums.js"
 import { Integrated } from "./Integrated.js";
@@ -283,3 +285,5 @@ export class SR_LatchSync extends SR_Latch {
         return result;
     }
 }
+
+//end of retrieved code
