@@ -29,7 +29,6 @@ namespace teachingtools.Pages
                 var result = await _userInManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
-                    await _signInManager.SignInAsync(user, isPersistent: false);
                     await _userInManager.AddToRoleAsync(user, "Member");
                     await _db.SaveChangesAsync();
                     return RedirectToPage("/Dashboard");
@@ -39,7 +38,7 @@ namespace teachingtools.Pages
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-            return RedirectToPage("/Register");
+            return Page();
         }
     }
 }

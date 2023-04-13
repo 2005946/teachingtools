@@ -21,7 +21,7 @@
                         <a>Your Subscription</a>
                     </div>
                 </div>
-                @if (Model.subType == false && User.IsInRole("Subscriber"))
+                @if (Model.subType == false && Model.isPaid == true)
                 {
                     <div class="row">
                         <div class="bullet-points">
@@ -76,7 +76,7 @@
                             </a>
                         </div>
                     </div>
-                }else if (Model.subType == true && User.IsInRole("Subscriber"))
+                }else if (Model.subType == true && Model.isPaid == true)
                 {
                     <div class="row">
                         <div class="bullet-points">
@@ -131,7 +131,7 @@
                             </a>
                         </div>
                     </div>
-                }else if (User.IsInRole("Member"))
+                }else if (Model.isPaid == false)
                 {
                     <div class="row">
                         <div class="bullet-points">

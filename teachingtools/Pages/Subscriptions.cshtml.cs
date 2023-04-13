@@ -10,13 +10,20 @@ namespace teachingtools.Pages
         private AppDbContext _db;
 
         public readonly UserManager<ApplicationUser> _userManager;
+        public IList<string> userRole;
         public SubscriptionsModel(AppDbContext db, UserManager<ApplicationUser> um)
         {
             _db = db;
             _userManager = um;
         }
-        public void OnGet()
+        public async Task OnGetAsync()
         {
+            var user = await _userManager.GetUserAsync(User);
+            var role = await _userManager.GetRolesAsync(user);
+            if (role != null)
+            {
+                userRole = role;
+            }
         }
     }
 }

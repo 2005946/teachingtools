@@ -17,6 +17,7 @@ namespace teachingtools.Pages
         private readonly SignInManager<ApplicationUser> _signInManager;
 
         public bool subType;
+        public bool isPaid;
         public AccountModel(AppDbContext db, SignInManager<ApplicationUser> sm, UserManager<ApplicationUser> um)
         {
             _db = db;
@@ -30,8 +31,13 @@ namespace teachingtools.Pages
             var subUser = await _db.Subscriptions.FindAsync(user.UserName);
             if (subUser != null)
             {
+                isPaid = true;
 				subType = subUser.SubscriptionType;
-			}  
+            }
+            else
+            {
+                isPaid = false;
+            }
         }
 
         public async Task<IActionResult> OnPostAsync()

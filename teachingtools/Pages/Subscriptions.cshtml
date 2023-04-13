@@ -96,15 +96,26 @@
                     <div class="subscribe align-content-center">
                         @if (User.Identity.IsAuthenticated == true)
                         {
-                            if (User.IsInRole("Subscriber") && User.IsInRole("Member")){
+                            foreach (var role in Model.userRole)
+                            {
+                                if (role == "Subscriber")
+                                {
+                                    break; 
+                                }else if (role == "Member") {
+                                    <a asp-page="/Checkout">
+                                        <button id="checkout-button" disabled>Buy Now</button>
+                                    </a>
+                                }
+                            }
+                            @*if (User.IsInRole("Subscriber") && User.IsInRole("Member")){
 
-
-                            }else if (User.IsInRole("Member"))
+                            }
+                            else if (User.IsInRole("Member") && !User.IsInRole("Subscriber"))
                             {
                                 <a asp-page="/Checkout">
                                     <button id="checkout-button" disabled>Buy Now</button>
                                 </a>
-                            }
+                            }*@
                         }else{
                             <a asp-page="/Index">
                                 <button onclick="logInAlert()" type="button">
