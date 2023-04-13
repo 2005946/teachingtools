@@ -97,9 +97,7 @@
                         @if (User.Identity.IsAuthenticated == true)
                         {
                             if (User.IsInRole("Subscriber") && User.IsInRole("Member")){
-                                <a asp-page="/Checkout">
-                                    <button id="checkout-button" disabled>Buy Now</button>
-                                </a>
+
 
                             }else if (User.IsInRole("Member"))
                             {
