@@ -1,3 +1,4 @@
+/* code adapted from drendog, Jun 18 2020*/
 html {
     overflow-x: hidden;
 }
@@ -56,6 +57,8 @@ button:hover {
 input[type="file"] {
     display: none;
 }
+
+/* end of adapted code*/
 
 .choices {
     background-color: white;
